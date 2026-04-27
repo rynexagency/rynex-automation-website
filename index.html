@@ -1,0 +1,2488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rynex — Private n8n Automation Infrastructure</title>
+  <meta name="description"
+    content="We build private n8n automation infrastructure for businesses that have outgrown Zapier. One-time setup. Your data. Your servers. Zero subscription lock-in." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rynex — Private n8n Automation Infrastructure" />
+  <meta property="og:description"
+    content="We build private n8n automation infrastructure for businesses that have outgrown Zapier. One-time setup. Your data. Your servers. Zero subscription lock-in." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rynex.agency/" />
+  <meta property="og:image" content="https://rynex.agency/Assets/Rynex_Logo.svg" />
+  <meta name="twitter:image" content="https://rynex.agency/Assets/Rynex_Logo.svg" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rynex — Private n8n Automation Infrastructure" />
+  <meta name="twitter:description"
+    content="We build private n8n automation infrastructure for businesses that have outgrown Zapier. One-time setup. Your data. Your servers. Zero subscription lock-in." />
+
+  <link rel="canonical" href="https://rynex.agency/" />
+  <link rel="icon" type="image/svg+xml" href="Assets/Rynex_Logo.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav id="main-nav" class="nav">
+    <div class="nav-left">
+      <a href="#" class="logo">
+        <img src="Assets/Rynex.png" alt="Rynex" class="nav-logo-img" />
+      </a>
+    </div>
+    <div class="nav-center">
+      <a href="#roi" class="nav-link">ROI Calculator</a>
+      <a href="#case-studies" class="nav-link">Case Studies</a>
+      <a href="#industries" class="nav-link">Industries</a>
+      <a href="#team" class="nav-link">Team</a>
+    </div>
+
+    <a href="#book" class="cta-button">
+      <svg class="cta-phone" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+      </svg>
+      <span>Book a Free Call</span>
+      <span class="cta-ring"></span>
+    </a>
+    <div class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile panel -->
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#roi" class="mobile-link">ROI Calculator</a>
+    <a href="#case-studies" class="mobile-link">Case Studies</a>
+    <a href="#industries" class="mobile-link">Industries</a>
+    <a href="#team" class="mobile-link">Team</a>
+    <a href="#book" class="mobile-cta">Book a Free Call</a>
+  </div>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="hero" class="hero">
+    <!-- Background effects -->
+    <div class="hero-blob hero-blob-a"></div>
+    <div class="hero-blob hero-blob-b"></div>
+    <div class="hero-blob hero-blob-c"></div>
+    <div class="hero-bottom-fade"></div>
+
+    <div class="hero-grid">
+      <!-- LEFT COLUMN -->
+      <div class="hero-left">
+        <!-- Removed top badge -->
+        <h1 class="hero-h1 anim-typewriter">
+          Stop Chasing<br />
+          Start Closing<br />
+          <span class="gradient-text">Stay in Control</span>
+        </h1>
+        <p class="hero-body anim-fade-up" style="--delay:300ms">
+          Every hour you spend on follow-ups is an hour not spent growing. Rynex builds automation that captures leads,
+          sends replies, updates your CRM, and books appointments — automatically, around the clock
+        </p>
+
+        <div class="hero-labels anim-fade-up" style="--delay:450ms">
+          <div class="hero-label-item">
+            <span class="label-dot"></span>
+            <span>Custom Systems. Built for Your Business.</span>
+          </div>
+          <div class="hero-label-item">
+            <span class="label-dot"></span>
+            <span>Built Around How You Actually Work.</span>
+          </div>
+          <div class="hero-label-item">
+            <span class="label-dot"></span>
+            <span>Set Up Fast. Runs Reliably. No Tech Headache.</span>
+          </div>
+        </div>
+
+        <div class="hero-ctas anim-fade-up" style="--delay:600ms">
+          <a href="#book" class="btn-primary pulse-glow">Schedule a Free Call →</a>
+          <a href="#roi" class="btn-ghost">See What You're Losing →</a>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN — Cursor-Reactive Fluid Animation -->
+      <div class="hero-right">
+        <div class="anim-container" id="animContainer">
+
+          <!-- Canvas for dynamic connection lines & flowing dots -->
+          <canvas id="animCanvas" class="anim-canvas"></canvas>
+
+          <!-- Ambient glow behind hub -->
+          <div class="anim-ambient-glow"></div>
+
+          <!-- n8n Hub (center) -->
+          <div class="anim-hub" id="animHub">
+            <span class="hub-label gradient-text">n8n</span>
+            <span class="hub-sub">Automation Engine</span>
+          </div>
+
+          <!-- 8 Floating App Icons with labels -->
+          <div class="float-icon" id="fi-meta" style="--fi-color:#1877F2">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="#fff">
+              <path
+                d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
+            </svg>
+            <span class="float-icon-label">Facebook</span>
+            <span class="check-badge">✓</span>
+          </div>
+          <div class="float-icon" id="fi-elevenlabs" style="--fi-color:#2d2d2d;border:1px solid rgba(255,255,255,0.15)">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+              <rect x="8" y="4" width="3" height="16" rx="1.5" fill="#fff" />
+              <rect x="13" y="4" width="3" height="16" rx="1.5" fill="#fff" />
+            </svg>
+            <span class="float-icon-label">Voice Bot</span>
+            <span class="check-badge">✓</span>
+          </div>
+          <div class="float-icon" id="fi-whatsapp" style="--fi-color:#25D366">
+            <img src="Assets/wp logo.png" alt="WhatsApp" width="22" height="22" style="object-fit:contain;" />
+            <span class="float-icon-label">WhatsApp</span>
+            <span class="check-badge">✓</span>
+          </div>
+          <div class="float-icon" id="fi-gmail" style="--fi-color:#FFFFFF; border: 1px solid rgba(0,0,0,0.1);">
+            <img src="Assets/Gemini_Generated_Image_ijm6kgijm6kgijm6.png" alt="Follow-Up" width="22" height="22"
+              style="object-fit:contain;" />
+            <span class="float-icon-label">Follow-Up</span>
+            <span class="check-badge">✓</span>
+          </div>
+          <div class="float-icon" id="fi-gcal" style="--fi-color:#FFFFFF; border: 1px solid rgba(0,0,0,0.1);">
+            <img src="Assets/Gemini_Generated_Image_34mk4834mk4834mk.png" alt="Booking" width="24" height="24"
+              style="object-fit:contain;" />
+            <span class="float-icon-label">Booking</span>
+            <span class="check-badge">✓</span>
+          </div>
+          <div class="float-icon" id="fi-ghl" style="--fi-color:#FFFFFF; border: 1px solid rgba(0,0,0,0.1);">
+            <img src="Assets/GHL.png" alt="CRM" width="24" height="24" style="object-fit:contain;" />
+            <span class="float-icon-label">CRM</span>
+            <span class="check-badge">✓</span>
+          </div>
+          <div class="float-icon" id="fi-stripe" style="--fi-color:#635BFF">
+            <img src="Assets/stripe.png" alt="Stripe" width="22" height="22" style="object-fit:contain;" />
+            <span class="float-icon-label">Payments</span>
+            <span class="check-badge">✓</span>
+          </div>
+          <div class="float-icon" id="fi-twilio" style="--fi-color:#FFFFFF; border: 1px solid rgba(0,0,0,0.1);">
+            <img src="Assets/twillo logo.jpg" alt="Twilio" width="24" height="24"
+              style="object-fit:contain; border-radius:4px;" />
+            <span class="float-icon-label">SMS</span>
+            <span class="check-badge">✓</span>
+          </div>
+
+          <!-- Pipeline status (shown during workflow run) -->
+          <div class="pipeline-status" id="pipelineStatus">✅ Lead Received</div>
+
+          <!-- Pulse rings -->
+          <div class="pulse-ring" id="ring3"></div>
+
+        </div>
+
+        <!-- Flow Path Overlay -->
+        <div class="hero-flow-path">
+          <div class="flow-inner">
+            <span class="flow-step" style="--i:0">Ads</span>
+            <span class="flow-arrow" style="--i:1">→</span>
+            <span class="flow-step" style="--i:2">Voice Agent</span>
+            <span class="flow-arrow" style="--i:3">→</span>
+            <span class="flow-step" style="--i:4">n8n</span>
+            <span class="flow-arrow" style="--i:5">→</span>
+            <span class="flow-step" style="--i:6">CRM</span>
+            <span class="flow-arrow" style="--i:7">→</span>
+            <span class="flow-step" style="--i:8">Follow-Up</span>
+            <span class="flow-arrow" style="--i:9">→</span>
+            <span class="flow-step" style="--i:10">Booking</span>
+            <span class="flow-arrow" style="--i:11">→</span>
+            <span class="flow-step" style="--i:12">SMS</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 3 — SOCIAL PROOF STRIP ==================== -->
+  <section id="social-proof" class="proof-strip">
+    <!-- Section Label -->
+    <div class="proof-section-label">You've seen this problem Every Single Day</div>
+
+    <!-- Stats Row -->
+    <div class="proof-stats">
+      <div class="proof-stat reveal reveal-delay-1">
+        <span class="proof-number" data-target="47" data-suffix="+">0</span>
+        <span class="proof-label">Lead Capture — Before They Go Cold</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-stat reveal reveal-delay-2">
+        <span class="proof-number" data-target="3.2" data-suffix="h" data-decimal="1">0</span>
+        <span class="proof-label">Follow-Up Sequences — No More Manual Reminders</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-stat reveal reveal-delay-3">
+        <span class="proof-number" data-target="6" data-suffix="">0</span>
+        <span class="proof-label">Appointment Booking — Filled Automatically</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-stat reveal reveal-delay-4">
+        <span class="proof-number" data-target="100" data-suffix="%">0</span>
+        <span class="proof-label">Custom Integrations — Built for Your Tools</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-stat reveal reveal-delay-4">
+        <span class="proof-number" data-target="72" data-prefix="<" data-suffix="h">0</span>
+        <span class="proof-label">Clean Reporting — Always Know What's Working</span>
+      </div>
+    </div>
+
+    <!-- Glowing Separator -->
+    <div class="proof-separator"></div>
+
+    <!-- Section Label -->
+    <div class="proof-section-label">Industries We Work With</div>
+
+    <!-- Marquee Ticker -->
+    <div class="marquee-wrapper">
+      <div class="marquee-track" id="marqueeTrack">
+        <div class="marquee-content">
+          <span class="marquee-item">Real Estate</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">Healthcare</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">E-Commerce</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">Hospitality</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">Legal Services</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">Financial Advisory</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">F&B / Restaurants</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">SaaS Companies</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">Recruitment Firms</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">Property Management</span><span class="marquee-diamond">◆</span>
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+          <span class="marquee-item">Real Estate</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">Healthcare</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">E-Commerce</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">Hospitality</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">Legal Services</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">Financial Advisory</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">F&B / Restaurants</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">SaaS Companies</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">Recruitment Firms</span><span class="marquee-diamond">◆</span>
+          <span class="marquee-item">Property Management</span><span class="marquee-diamond">◆</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SECTION 4 — CASE STUDIES ==================== -->
+  <section id="case-studies" class="cs-section">
+    <div class="cs-header reveal">
+      <div class="hero-badge">
+        <span class="badge-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg></span>
+        <span>Real Use Cases</span>
+      </div>
+      <h2 class="cs-h2">Systems That <span class="gradient-text">Solve Real Problems</span></h2>
+      <p class="cs-sub">You don't need more tips or templates. You need a system that works. These are real setups we've
+        built for real businesses — designed around their problems, not borrowed from someone else's.</p>
+    </div>
+
+    <!-- Case Study Card -->
+    <div class="cs-card reveal reveal-delay-1">
+
+
+      <!-- Left Panel -->
+      <div class="cs-left">
+        <div class="cs-left-inner">
+          <span class="cs-label">Case Study No. 01 · Restaurant Automation · Voice + WhatsApp + CRM</span>
+          <h3 class="cs-h3">The Customer Called. Nobody Picked Up. They Ordered Elsewhere.</h3>
+
+          <p class="cs-problem">This happens in every restaurant without a system. Calls get missed. WhatsApp goes
+            unanswered. Staff are busy with tables. We fixed that. Now every call, message, and booking enters one
+            system — and the right response goes out automatically.</p>
+
+          <div class="cs-architecture-grid">
+            <div class="cs-arch-item">
+              <span class="cs-built-label">Main Entry Point</span>
+              <p><strong>Calls, forms, and WhatsApp messages enter one place.</strong> The system reads the intent and
+                triggers the right workflow immediately.</p>
+            </div>
+            <div class="cs-arch-item">
+              <span class="cs-built-label">The Brain</span>
+              <p><strong>Logic sorts every request</strong> — booking, order, support, or event enquiry. No manual
+                reading. No missed routing.</p>
+            </div>
+          </div>
+
+          <div class="cs-workflow-details">
+            <span class="cs-built-label">Operational Flows</span>
+            <ul class="cs-workflow-list">
+              <li><strong>Smart Reservations:</strong> Accepts bookings, handles changes, and sends confirmations — no
+                staff needed.</li>
+              <li><strong>Order Follow-Up:</strong> Captures the request, confirms status, and updates the customer
+                automatically.</li>
+              <li><strong>Catering Enquiries:</strong> Collects event details and alerts your team with everything in
+                one message.</li>
+              <li><strong>Auto Logging:</strong> Every single enquiry is saved — ready for follow-up or monthly review.
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="cs-highlights">
+            <span class="cs-built-label">System Highlights</span>
+            <p class="cs-problem">Faster first replies. Fewer dropped requests. Cleaner team handoffs. A customer
+              experience that runs reliably — from first message to final action.
+            </p>
+          </div>
+
+          <div class="cs-metrics">
+            <div class="cs-metric">
+              <span class="cs-metric-val">24/7</span>
+              <span class="cs-metric-label">Response Ready</span>
+            </div>
+            <div class="cs-metric">
+              <span class="cs-metric-val">100%</span>
+              <span class="cs-metric-label">Less Manual Work</span>
+            </div>
+            <div class="cs-metric">
+              <span class="cs-metric-val">100%</span>
+              <span class="cs-metric-label">Centralized Tracking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel — Audio & Media Showcase -->
+      <div class="cs-right cs-right-new">
+        <!-- Techy Video Showcase -->
+        <div class="techy-video-showcase">
+          <div class="techy-bracket top-left"></div>
+          <div class="techy-bracket top-right"></div>
+          <div class="techy-bracket bottom-left"></div>
+          <div class="techy-bracket bottom-right"></div>
+
+          <div class="techy-video-header">
+            <span>Dashboard & Automation Workflow</span>
+            <span class="cs-live-badge" style="margin-left: auto;">● LIVE</span>
+          </div>
+          <div class="media-video-wrapper">
+            <video class="media-video" autoplay muted loop playsinline controls preload="none">
+              <source src="Assets/Tikka House Web Video final.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <!-- Audio Player Card -->
+        <div class="audio-showcase-card" id="csAudioCard">
+          <audio id="csAudio" src="Assets/WhatsApp Audio 2025-11-05 at 7.34.04 PM (2).mpeg" preload="metadata"></audio>
+          <div class="audio-top-row">
+            <div class="audio-title">Restaurant Agent Demo</div>
+            <button class="audio-play-btn" id="csAudioPlayBtn" aria-label="Play/Pause">
+              <svg id="csAudioIconPlay" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              <svg id="csAudioIconPause" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"
+                style="display:none;">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="audio-progress-row">
+            <div class="audio-time" id="csAudioCurrent">0:00</div>
+            <div class="audio-time" id="csAudioTotal">0:00</div>
+          </div>
+
+          <div class="audio-track-container" id="csAudioTrackContainer">
+            <div class="audio-track">
+              <div class="audio-fill" id="csAudioFill" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <div class="audio-footer">
+            <div class="audio-logo">
+              <img src="Assets/Rynex_Logo.svg" alt="Rynex" width="16" height="16">
+              <span>Rynex AI</span>
+            </div>
+            <div class="audio-subtitle">Hear how automated calls can work for your business</div>
+          </div>
+        </div>
+
+        <!-- Scrollable Media Container -->
+        <div class="call-log-slider">
+          <div class="call-log-track">
+            <div class="media-item call-log-slide">
+              <h4 class="media-title">Intimation to Manager of Tikka House</h4>
+              <div class="media-img-wrapper">
+                <img src="Assets/WhatsApp Image 2025-11-05 at 7.36.06 PM (1).jpeg"
+                  alt="Intimation to Manager of Tikka House" class="media-img clickable-screenshot" loading="lazy" />
+              </div>
+            </div>
+            <div class="media-item call-log-slide">
+              <h4 class="media-title">Updates to Customer</h4>
+              <div class="media-img-wrapper">
+                <img src="Assets/WhatsApp Image 2025-11-05 at 7.37.28 PM (1).jpeg" alt="Intimation to Customer"
+                  class="media-img clickable-screenshot" loading="lazy" />
+              </div>
+            </div>
+            <!-- Clones for seamless looping -->
+            <div class="media-item call-log-slide" data-clone="true">
+              <h4 class="media-title">Intimation to Manager of Tikka House</h4>
+              <div class="media-img-wrapper">
+                <img src="Assets/WhatsApp Image 2025-11-05 at 7.36.06 PM (1).jpeg"
+                  alt="Intimation to Manager of Tikka House" class="media-img clickable-screenshot" loading="lazy" />
+              </div>
+            </div>
+            <div class="media-item call-log-slide" data-clone="true">
+              <h4 class="media-title">Updates to Customer</h4>
+              <div class="media-img-wrapper">
+                <img src="Assets/WhatsApp Image 2025-11-05 at 7.37.28 PM (1).jpeg" alt="Intimation to Customer"
+                  class="media-img clickable-screenshot" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <!-- DOTS: outside the track, always visible -->
+          <div class="call-log-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 5.5 — ARCHITECTURE GALLERY ==================== -->
+  <section id="blueprints" class="gallery-section">
+    <div class="gallery-inner">
+      <div class="gallery-header reveal">
+        <div class="hero-badge fade-in">How It Works →</div>
+        <h2 class="gallery-h2">The <span>Automation</span> Gallery</h2>
+        <p class="gallery-p">Here's what we build behind the scenes. Every workflow is designed around your real
+          bottlenecks — not borrowed from a generic template that doesn't fit your business.</p>
+      </div>
+
+      <div class="gallery-marquee-container">
+        <!-- Navigation Buttons -->
+        <div class="gallery-nav">
+          <button class="gallery-nav-btn prev" id="galleryPrev" aria-label="Previous">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button class="gallery-nav-btn next" id="galleryNext" aria-label="Next">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="gallery-marquee" id="galleryMarquee">
+          <!-- Item 1 -->
+          <div class="gallery-card">
+            <div class="gallery-card-wrapper">
+              <div class="gallery-img-container">
+                <img src="Assets/client life cycle dark theme.jpeg" alt="Client Lifecycle Flow"
+                  class="gallery-img dark-only">
+                <img src="Assets/client life cylce light theme.jpeg" alt="Client Lifecycle Flow"
+                  class="gallery-img light-only">
+              </div>
+              <div class="gallery-info">
+                <span class="gallery-tag">Core Flow</span>
+                <h3 class="gallery-title">Lead to Client Journey</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="gallery-card">
+            <div class="gallery-card-wrapper">
+              <div class="gallery-img-container">
+                <img src="Assets/restaurant dark theme.png" alt="Restaurant Voice Agent" class="gallery-img dark-only">
+                <img src="Assets/restaurant light theme.png" alt="Restaurant Voice Agent"
+                  class="gallery-img light-only">
+              </div>
+              <div class="gallery-info">
+                <span class="gallery-tag">Voice AI</span>
+                <h3 class="gallery-title">Call Handling System</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="gallery-card">
+            <div class="gallery-card-wrapper">
+              <div class="gallery-img-container">
+                <img src="Assets/tts-stt dark theme.png" alt="Voice Bot (TTS/STT)" class="gallery-img dark-only">
+                <img src="Assets/tts to stt light mode.png" alt="Voice Bot (TTS/STT)" class="gallery-img light-only">
+              </div>
+              <div class="gallery-info">
+                <span class="gallery-tag">Hybrid Bot</span>
+                <h3 class="gallery-title">Chat + Voice Automation</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="gallery-card">
+            <div class="gallery-card-wrapper">
+              <div class="gallery-img-container">
+                <img src="Assets/calender bookin dark theme .png" alt="Event Booking & Calendar"
+                  class="gallery-img dark-only">
+                <img src="Assets/event booking light.png" alt="Event Booking & Calendar" class="gallery-img light-only">
+              </div>
+              <div class="gallery-info">
+                <span class="gallery-tag">Scheduling</span>
+                <h3 class="gallery-title">Booking & Calendar Flow</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Repeat for infinite scroll -->
+          <div class="gallery-card" aria-hidden="true">
+            <div class="gallery-card-wrapper">
+              <div class="gallery-img-container">
+                <img src="Assets/client life cycle dark theme.jpeg" alt="" class="gallery-img dark-only">
+                <img src="Assets/client life cylce light theme.jpeg" alt="" class="gallery-img light-only">
+              </div>
+              <div class="gallery-info">
+                <span class="gallery-tag">Core Flow</span>
+                <h3 class="gallery-title">Lead to Client Journey</h3>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-card" aria-hidden="true">
+            <div class="gallery-card-wrapper">
+              <div class="gallery-img-container">
+                <img src="Assets/restaurant dark theme.png" alt="" class="gallery-img dark-only">
+                <img src="Assets/restaurant light theme.png" alt="" class="gallery-img light-only">
+              </div>
+              <div class="gallery-info">
+                <span class="gallery-tag">Voice AI</span>
+                <h3 class="gallery-title">Call Handling System</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 6 — ROI CALCULATOR ==================== -->
+  <section id="roi" class="roi-section">
+    <div class="roi-inner">
+      <div class="roi-header reveal">
+        <div class="hero-badge fade-in">
+          <span class="badge-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg></span>
+          <span>ROI Calculator</span>
+        </div>
+        <h2 class="roi-h2 anim-typewriter">How Much Is <span class="gradient-text">Manual Work</span> Actually Costing
+          You Every Month?</h2>
+        <p class="roi-sub fade-in">You probably feel it. Let's put a number on it. Move the sliders and see exactly what
+          repetitive work is taking from your business every single month.</p>
+      </div>
+
+      <div class="roi-grid reveal reveal-delay-1">
+        <!-- LEFT — Sliders -->
+        <div class="roi-sliders">
+          <!-- Slider 1: Team size -->
+          <div class="roi-slider-group">
+            <label class="roi-slider-label">
+              Team size: <strong id="valTeam">5</strong> people
+            </label>
+            <input type="range" id="sliderTeam" class="roi-range" min="1" max="50" value="5" step="1" />
+          </div>
+
+          <!-- Slider 2: Manual ops hours -->
+          <div class="roi-slider-group">
+            <label class="roi-slider-label">
+              Manual ops hours/day: <strong id="valHours">3</strong>h/day
+            </label>
+            <input type="range" id="sliderHours" class="roi-range" min="1" max="12" value="3" step="0.5" />
+          </div>
+
+          <!-- Slider 3: Rate value with hourly/daily toggle -->
+          <div class="roi-slider-group">
+            <div class="roi-rate-header">
+              <label class="roi-slider-label">
+                Avg <span id="rateModeLabel">hourly</span> value: <strong id="valRate">₹800</strong>/<span
+                  id="rateUnitLabel">hr</span>
+              </label>
+              <div class="roi-toggle" id="rateToggle" role="group" aria-label="Rate basis">
+                <button class="roi-toggle-btn active" id="btnHourly" data-mode="hourly">Hourly</button>
+                <button class="roi-toggle-btn" id="btnDaily" data-mode="daily">Daily</button>
+              </div>
+            </div>
+            <input type="range" id="sliderRate" class="roi-range" min="200" max="5000" value="800" step="100" />
+          </div>
+
+          <!-- Slider 4: Error events -->
+          <div class="roi-slider-group">
+            <label class="roi-slider-label">
+              Error/rework events per week: <strong id="valErrors">4</strong> events/week
+            </label>
+            <input type="range" id="sliderErrors" class="roi-range" min="0" max="20" value="4" step="1" />
+          </div>
+
+          <p class="roi-disclaimer">This estimate includes time saved, errors eliminated, and faster follow-ups that
+            turn into actual revenue.</p>
+        </div>
+
+        <!-- RIGHT — Live Results -->
+        <div class="roi-results">
+          <div class="roi-results-card">
+            <span class="roi-results-label">Monthly Value Recovered</span>
+            <div class="roi-big-number" id="roiBigNumber">₹2,43,200</div>
+
+            <div class="roi-breakdown">
+              <div class="roi-row">
+                <span>Hours Saved / Month</span>
+                <span id="roiHours">264h</span>
+              </div>
+              <div class="roi-row">
+                <span>Labor Value Recovered / Month</span>
+                <span id="roiLabor">₹2,11,200</span>
+              </div>
+              <div class="roi-row">
+                <span>Error Cost Reduced / Month</span>
+                <span id="roiErrors">₹34,640</span>
+              </div>
+              <div class="roi-row">
+                <span>Typical Rynex setup cost</span>
+                <span class="roi-onetime">One-time</span>
+              </div>
+            </div>
+
+            <a href="#book" class="btn-primary roi-cta">Book Your Free Call →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 7 — INDUSTRIES ==================== -->
+  <section id="industries" class="ind-section">
+    <div class="ind-inner reveal reveal-delay-1">
+      <div class="ind-header">
+        <div class="hero-badge fade-in">
+          <span class="badge-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg></span>
+          <span>Industry Solutions</span>
+        </div>
+        <h2 class="ind-h2 anim-typewriter">Your Business Is Different. <span class="gradient-text">Your Automation
+            Should Be Too.</span></h2>
+        <p class="ind-sub fade-in">A jewelry shop loses time differently than a clinic. A real estate agent has
+          different problems than a D2C brand. We don't sell a standard package. We build around your actual workflow,
+          your team size, and your customer journey.</p>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="ind-tabs" role="tablist" aria-label="Industry verticals">
+        <button class="ind-tab active" role="tab" aria-selected="true" aria-controls="panel-realestate"
+          id="tab-realestate" tabindex="0">Real Estate</button>
+        <button class="ind-tab" role="tab" aria-selected="false" aria-controls="panel-healthcare" id="tab-healthcare"
+          tabindex="-1">Healthcare</button>
+        <button class="ind-tab" role="tab" aria-selected="false" aria-controls="panel-ecommerce" id="tab-ecommerce"
+          tabindex="-1">E-Commerce</button>
+      </div>
+
+      <!-- ─── PANEL 1: Real Estate ─── -->
+      <div class="ind-panel active" role="tabpanel" id="panel-realestate" aria-labelledby="tab-realestate">
+        <div class="ind-grid">
+          <div class="ind-content">
+            <h3 class="ind-title">The Lead Came In at 9 PM. You Replied at 9 AM. They're Gone.</h3>
+            <p class="ind-problem">Leads don't wait overnight. If your follow-up starts the next morning, someone else
+              already closed them. Automation replies instantly — qualifies the lead, updates your CRM, and books the
+              site visit — while you're still asleep.</p>
+            <ol class="cs-steps">
+              <li><span class="cs-step-num">1</span><span>Lead form submitted → Instant capture</span></li>
+              <li><span class="cs-step-num">2</span><span>Lead check → Qualified or nurture path</span></li>
+              <li><span class="cs-step-num">3</span><span>Qualified lead → Auto entry in CRM</span>
+              </li>
+              <li><span class="cs-step-num">4</span><span>Instant WhatsApp follow-up sent</span></li>
+              <li><span class="cs-step-num">5</span><span>No reply → Reminder sequence starts</span>
+              </li>
+              <li><span class="cs-step-num">6</span><span>Viewing confirmed → Google Calendar invite + Notion briefing
+                  doc auto-generated</span></li>
+            </ol>
+            <div class="ind-tags">
+              <span class="ind-tag">n8n</span><span class="ind-tag">CRM</span><span class="ind-tag">SMS</span><span
+                class="ind-tag">Facebook Lead Ads API</span><span class="ind-tag">Google Calendar</span><span
+                class="ind-tag">Notion</span>
+            </div>
+            <p class="ind-footer">Built for brokers, builders, agents, and property teams dealing with high daily lead
+              volume. Stop losing warm leads to slow follow-up.</p>
+          </div>
+          <div class="ind-viz">
+            <div class="pipe-flow">
+              <div class="pipe-node pipe-purple">Facebook Ad</div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-purple">IF Node</div>
+              <div class="pipe-branch">
+                <div class="pipe-branch-left">
+                  <div class="pipe-arrow-sm"></div>
+                  <div class="pipe-node pipe-cyan">Nurture</div>
+                </div>
+                <div class="pipe-branch-right">
+                  <div class="pipe-arrow-sm"></div>
+                  <div class="pipe-node pipe-green">Qualified</div>
+                </div>
+              </div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-orange">GHL CRM</div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-green">Twilio WhatsApp</div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-blue">Schedule Trigger</div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-pink">Notion + Calendar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── PANEL 2: Healthcare ─── -->
+      <div class="ind-panel" role="tabpanel" id="panel-healthcare" aria-labelledby="tab-healthcare" hidden>
+        <div class="ind-grid">
+          <div class="ind-content">
+            <h3 class="ind-title">Your Front Desk Is Spending Half the Day on Calls That Go Nowhere.</h3>
+            <p class="ind-problem">Reminder calls take time. Patients don't always pick up. And no-shows still happen.
+              We automate reminders, reschedule flows, review requests, and repeat follow-ups — so your front desk team
+              can focus on the patients who are actually there.</p>
+            <ol class="cs-steps">
+              <li><span class="cs-step-num">1</span><span>Patient books via form → n8n Webhook → Google Calendar +
+                  Notion patient DB</span></li>
+              <li><span class="cs-step-num">2</span><span>Schedule Trigger → WhatsApp reminder 48h before (Twilio) with
+                  reschedule link</span></li>
+              <li><span class="cs-step-num">3</span><span>n8n → second reminder via SMS 2h before</span></li>
+              <li><span class="cs-step-num">4</span><span>Patient replies "cancel" → intent parser → slot marked
+                  available → waitlist patient notified</span></li>
+              <li><span class="cs-step-num">5</span><span>Post-appointment → 2-day delay → satisfaction SMS + Google
+                  Review request</span></li>
+              <li><span class="cs-step-num">6</span><span>No-show → flagged in Notion + re-booking prompt after 5
+                  days</span></li>
+            </ol>
+            <div class="ind-compliance">Only your communication and scheduling flows are automated. Your clinical
+              process stays exactly with your team — always.</div>
+            <div class="ind-tags">
+              <span class="ind-tag">n8n</span><span class="ind-tag">Google Calendar</span><span
+                class="ind-tag">SMS</span><span class="ind-tag">Notion</span><span class="ind-tag">WhatsApp
+                Automation</span>
+            </div>
+            <p class="ind-footer">Useful for clinics, dental centers, wellness practices, and consultation businesses.
+              Want fewer no-shows? Let's talk.</p>
+          </div>
+          <div class="ind-viz">
+            <div class="pipe-flow">
+              <div class="pipe-node pipe-green">Patient Form</div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-purple">n8n Webhook</div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-blue">Google Calendar</div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-green">WhatsApp 48h</div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-cyan">SMS 2h</div>
+              <div class="pipe-branch">
+                <div class="pipe-branch-left">
+                  <div class="pipe-arrow-sm"></div>
+                  <div class="pipe-node pipe-yellow">Cancel → Waitlist</div>
+                </div>
+                <div class="pipe-branch-right">
+                  <div class="pipe-arrow-sm"></div>
+                  <div class="pipe-node pipe-pink">Post-Visit Review</div>
+                </div>
+              </div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-orange">No-Show → Rebook</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── PANEL 3: E-Commerce ─── -->
+      <div class="ind-panel" role="tabpanel" id="panel-ecommerce" aria-labelledby="tab-ecommerce" hidden>
+        <div class="ind-grid">
+          <div class="ind-content">
+            <h3 class="ind-title">You Have 6 Apps Open. Nothing Talks to Each Other. Orders Are Slipping.</h3>
+            <p class="ind-problem">Scattered tools create scattered operations. Duplicate data. Missed alerts. Unhappy
+              customers. We connect your store, CRM, WhatsApp, payments, and reports into one smooth system — so nothing
+              falls through the cracks.</p>
+            <ol class="cs-steps">
+              <li><span class="cs-step-num">1</span><span>Shopify Order → n8n Webhook → Notion order log + customer
+                  tagged in GHL by category</span></li>
+              <li><span class="cs-step-num">2</span><span>Abandoned Checkout → 3-message WhatsApp recovery sequence with
+                  progressive discount logic (5%→10%→free shipping)</span></li>
+              <li><span class="cs-step-num">3</span><span>Order Shipped → automated tracking WhatsApp + review request
+                  queued (3 days post-delivery)</span></li>
+              <li><span class="cs-step-num">4</span><span>CS Ticket (email) → OpenAI classifies issue → auto-reply for
+                  WISMO/returns OR escalates with context summary</span></li>
+              <li><span class="cs-step-num">5</span><span>Inventory &lt; threshold → alert to WhatsApp group + draft PO
+                  in Notion</span></li>
+              <li><span class="cs-step-num">6</span><span>Influencer discount code order → attribution tracked +
+                  performance dashboard updated</span></li>
+              <li><span class="cs-step-num">7</span><span>Monthly → automated P&amp;L summary from Shopify + Stripe +
+                  Notion → formatted report to owner's WhatsApp</span></li>
+            </ol>
+            <div class="ind-tags">
+              <span class="ind-tag">n8n</span><span class="ind-tag">Shopify API</span><span
+                class="ind-tag">OpenAI</span><span class="ind-tag">SMS</span><span class="ind-tag">Stripe</span><span
+                class="ind-tag">CRM</span><span class="ind-tag">Notion</span><span class="ind-tag">Follow-Up</span>
+            </div>
+            <p class="ind-footer">Built for D2C brands that want speed, visibility, and better retention — without
+              hiring more admin staff. Ready to clean up your operations?</p>
+          </div>
+          <div class="ind-viz">
+            <div class="pipe-flow">
+              <div class="pipe-node pipe-green">Shopify Order</div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-purple">n8n Webhook</div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-pink">Notion + GHL Tag</div>
+              <div class="pipe-branch">
+                <div class="pipe-branch-left">
+                  <div class="pipe-arrow-sm"></div>
+                  <div class="pipe-node pipe-orange">Abandoned Cart</div>
+                </div>
+                <div class="pipe-branch-right">
+                  <div class="pipe-arrow-sm"></div>
+                  <div class="pipe-node pipe-green">Shipped → Track</div>
+                </div>
+              </div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-blue">OpenAI Classify</div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-purple">Inventory Alert</div>
+              <div class="pipe-arrow"></div>
+              <div class="pipe-node pipe-cyan">Monthly P&amp;L</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ==================== SECTION 8 — TEAM ==================== -->
+  <section id="team" class="team-section">
+    <div class="team-inner">
+      <div class="team-header reveal">
+        <div class="hero-badge fade-in">
+          <span class="badge-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg></span>
+          <span>Our Team</span>
+        </div>
+        <h2 class="team-h2 anim-typewriter">We've Seen What <span class="gradient-text">Wastes Time</span> in Real
+          Businesses. We Fix It.</h2>
+        <p class="team-sub fade-in">We're not selling software licenses. We build systems. Every workflow we design
+          comes from sitting with a business, understanding what breaks down, and building something that holds up every
+          day.</p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Card 1: Krish -->
+        <div class="team-card reveal reveal-delay-1">
+          <div class="team-photo-wrap">
+            <div class="team-photo">
+              <img src="Assets/Krish.png" alt="Krish"
+                style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" loading="lazy">
+            </div>
+          </div>
+          <h4 class="team-name">KRISHNAPRASATH L</h4>
+          <span class="team-role">FOUNDER & CEO</span>
+          <p class="team-desc">Specializes in hyper-automated business logic and full-stack ecosystem architecture.
+            Krishna designs the core engines that bridge legacy CRMs with modern AI, ensuring zero-latency lead
+            processing and iron-clad operational efficiency.</p>
+          <div class="team-tags">
+            <span class="team-tag">Architecture</span>
+            <span class="team-tag">Logic Engineering</span>
+            <span class="team-tag">AI Strategy</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Aasir -->
+        <div class="team-card reveal reveal-delay-2">
+          <div class="team-photo-wrap">
+            <div class="team-photo">
+              <img src="Assets/Naveen.png" alt="NAVEEN"
+                style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" loading="lazy">
+            </div>
+          </div>
+          <h4 class="team-name">NAVEEN D</h4>
+          <span class="team-role">CO-FOUNDER & INFRASTRUCTURE LEAD</span>
+          <p class="team-desc">Mission-critical infrastructure engineer focused on high-availability server
+            orchestration and deep API security. Naveen guarantees 99.9% uptime for complex, high-traffic workflow
+            deployments and cross-platform sync nodes.</p>
+          <div class="team-tags">
+            <span class="team-tag">DevOps</span>
+            <span class="team-tag">Cybersecurity</span>
+            <span class="team-tag">Scalability</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Balaji -->
+        <div class="team-card reveal reveal-delay-3">
+          <div class="team-photo-wrap">
+            <div class="team-photo">
+              <img src="Assets/Balaji.png" alt="balaji.s"
+                style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" loading="lazy">
+            </div>
+          </div>
+          <h4 class="team-name">BALAJI S</h4>
+          <span class="team-role">SENIOR AUTOMATION ENGINEER & LEAD DEVELOPER</span>
+          <p class="team-desc">Lead systems developer specializing in complex API orchestration and custom logic
+            engines. Balaji architects the technical bridge between front-end triggers and back-end automation nodes,
+            optimizing for high-concurrency performance and logic reliability.</p>
+          <div class="team-tags">
+            <span class="team-tag">API Orchestration</span>
+            <span class="team-tag">Full-Stack Dev</span>
+            <span class="team-tag">System Logic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION DIVIDER ==================== -->
+  <div class="section-divider">
+    <div class="divider-glow-line">
+    </div>
+  </div>
+
+  <!-- ==================== SECTION 9: BOOKING ==================== -->
+  <section id="book" class="book-section">
+    <!-- Decorative Animations -->
+    <div class="book-glow-orb book-glow-1"></div>
+    <div class="book-glow-orb book-glow-2"></div>
+
+    <div class="book-inner">
+      <div class="book-header">
+        <div class="hero-badge fade-in">
+          <span class="badge-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg></span>
+          <span>Book a Free Call</span>
+        </div>
+        <h2 class="book-h2 anim-typewriter">Tell Us What's <span class="gradient-text">Wasting Your Time.</span> We'll
+          Fix It.</h2>
+        <p class="book-sub fade-in">One 30-minute call. We find your highest-impact problem. You walk away with a clear,
+          practical plan — whether you work with us or not.</p>
+      </div>
+
+      <!-- Tab Navigation Inspired by Buldrr -->
+      <div class="book-tab-nav anim-fade-up" style="--delay: 200ms">
+        <button class="book-tab-btn active" data-target="book-form-section">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          Fill a form instead
+        </button>
+        <button class="book-tab-btn" data-target="book-calendar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Schedule a call
+        </button>
+      </div>
+
+      <div class="book-container anim-fade-up" style="--delay: 400ms">
+
+        <!-- Tab 1: Calendar Booking -->
+        <div id="book-calendar" class="book-tab-content">
+          <div class="cal-sub-nav">
+            <button class="cal-sub-btn active" data-url="https://cal.com/rynex-agency-rbfagk/30min?theme=dark">30
+              Min</button>
+            <button class="cal-sub-btn" data-url="https://cal.com/rynex-agency-rbfagk/15min?theme=dark">15 Min</button>
+            <button class="cal-sub-btn"
+              data-url="https://cal.com/rynex-agency-rbfagk/a-professional-meet?theme=dark">Professional Meet</button>
+          </div>
+          <div class="cal-embed-container">
+            <iframe src="https://cal.com/rynex-agency-rbfagk/30min?theme=dark"
+              style="width:100%; height:750px; border:none; overflow:hidden;" id="calEmbed" class="cal-iframe"
+              scrolling="no"></iframe>
+          </div>
+        </div>
+
+        <!-- Tab 2: Contact Form (DEFAULT) -->
+        <div id="book-form-section" class="book-tab-content active">
+          <div class="book-form-centered">
+            <form id="contactForm" class="book-form" novalidate method="POST">
+              <input type="hidden" name="access_key" value="5522a721-b79a-483a-93be-bf56b9291ace">
+              <input type="hidden" name="subject" value="New Contact Form Submission - Rynex Agency">
+              <input type="hidden" name="from_name" value="Rynex Website">
+              <input type="hidden" id="autorespondField" name="autorespond" value="">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="formName" class="form-label">Name</label>
+                  <input type="text" id="formName" name="name" class="form-input" placeholder="Your full name"
+                    required />
+                  <span class="form-error" id="errName"></span>
+                </div>
+                <div class="form-group">
+                  <label for="formBiz" class="form-label">Business Name</label>
+                  <input type="text" id="formBiz" name="business" class="form-input" placeholder="Company or brand name"
+                    required />
+                  <span class="form-error" id="errBiz"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="formEmail" class="form-label">Work Email</label>
+                  <input type="email" id="formEmail" name="email" class="form-input" placeholder="you@company.com"
+                    required />
+                  <span class="form-error" id="errEmail"></span>
+                </div>
+                <div class="form-group">
+                  <label for="formIndustry" class="form-label">Industry</label>
+                  <div class="form-select-wrap">
+                    <select id="formIndustry" name="industry" class="form-input form-select" required>
+                      <option value="" disabled selected>Select your industry</option>
+                      <option value="Real Estate">Real Estate</option>
+                      <option value="Healthcare">Healthcare</option>
+                      <option value="E-Commerce">E-Commerce</option>
+                      <option value="Hospitality">Hospitality</option>
+                      <option value="Legal">Legal</option>
+                      <option value="Financial Services">Financial Services</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <span class="form-error" id="errIndustry"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="formMsg" class="form-label">Message</label>
+                <textarea id="formMsg" name="message" class="form-input form-textarea"
+                  placeholder="Which task is eating the most time in your business right now?" required></textarea>
+                <span class="form-error" id="errMsg"></span>
+              </div>
+              <button type="submit" class="btn-primary book-submit" id="bookSubmitBtn" style="width: 100%;">
+                <span class="btn-text">Send Message →</span>
+                <span class="btn-spinner" id="bookSpinner"></span>
+              </button>
+            </form>
+
+            <div class="book-success" id="bookSuccess" hidden>
+              <div class="book-success-icon">✓</div>
+              <h3 class="book-success-title">Message Sent ✓</h3>
+              <p class="book-success-msg" id="bookSuccessMsg">Thank you. Our team will get back to you shortly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-email-block anim-fade-up" style="--delay: 600ms">
+        <a href="mailto:rynexxagency@gmail.com" class="book-email">rynexxagency@gmail.com</a>
+        <span class="book-email-note">We usually reply within 4 business hours.</span>
+      </div>
+    </div>
+  </section>
+  <!-- ==================== SECTION 10 — FOOTER ==================== -->
+  <footer class="site-footer">
+    <!-- Animated Glows -->
+    <div class="footer-glow-blob blob-1"></div>
+    <div class="footer-glow-blob blob-2"></div>
+    <div class="footer-glow-blob blob-3"></div>
+
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <!-- Col 1 — Brand -->
+        <div class="footer-brand anim-fade-up">
+          <div class="footer-logo">
+            <img src="Assets/Rynex.png" alt="Rynex" class="footer-logo-img" />
+          </div>
+          <p class="footer-desc">Architecting high-performance automation ecosystems for businesses ready to scale
+            beyond manual limitations.</p>
+        </div>
+
+        <!-- Col 2 — Explore -->
+        <div class="footer-col anim-fade-up" style="--delay: 100ms">
+          <h5 class="footer-col-title">Explore</h5>
+          <ul class="footer-links">
+            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#roi">ROI Calculator</a></li>
+            <li><a href="#industries">Sector Logic</a></li>
+            <li><a href="#team">Technical Team</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 — Connect -->
+        <div class="footer-col anim-fade-up" style="--delay: 200ms">
+          <h5 class="footer-col-title">Contact</h5>
+          <ul class="footer-links">
+            <li><a href="#book">Book Technical Call</a></li>
+            <li><a href="mailto:rynexxagency@gmail.com">rynexxagency@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Legal bar -->
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <span>© <span id="footer-year">2026</span> Rynex Architecture. All rights reserved.</span>
+          <div class="footer-legal-links">
+            <a href="#">Privacy Protocol</a>
+            <span class="footer-legal-sep">|</span>
+            <a href="#">Terms of Architecture</a>
+          </div>
+        </div>
+        <div class="footer-btt-wrap">
+          <button id="btt" class="footer-btt" aria-label="Back to top">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 15L12 9L6 15" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Screenshot Lightbox Modal -->
+  <div id="screenshotModal" class="screenshot-modal">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Full View Screenshot">
+    <div id="modalCaption" class="modal-caption"></div>
+  </div>
+
+
+  <script>
+    (function () {
+      'use strict';
+
+      // ══════════════════════════════════════════════════
+      // initNav
+      // ══════════════════════════════════════════════════
+      function initNav() {
+        var nav = document.getElementById('main-nav');
+        var hamburger = document.getElementById('hamburger');
+        var mobilePanel = document.getElementById('mobilePanel');
+        if (!nav) return;
+
+        // Scroll — add .nav--scrolled at 50px and hide/show on scroll direction
+        var lastScrollY = window.scrollY || document.documentElement.scrollTop;
+        window.addEventListener('scroll', function () {
+          var currentScrollY = window.scrollY || document.documentElement.scrollTop;
+          nav.classList.toggle('nav--scrolled', currentScrollY > 50);
+
+          if (Math.abs(currentScrollY - lastScrollY) > 10) {
+            if (currentScrollY > 50) {
+              if (currentScrollY > lastScrollY) {
+                // Scrolling down
+                nav.classList.add('nav--hidden');
+              } else {
+                // Scrolling up
+                nav.classList.remove('nav--hidden');
+              }
+            } else {
+              // At top
+              nav.classList.remove('nav--hidden');
+            }
+            lastScrollY = currentScrollY;
+          }
+        });
+
+        if (hamburger && mobilePanel) {
+          // Hamburger toggle
+          hamburger.addEventListener('click', function () {
+            var isOpen = mobilePanel.classList.toggle('open');
+            hamburger.classList.toggle('active', isOpen);
+            hamburger.setAttribute('aria-expanded', String(isOpen));
+          });
+
+          // Close on link click
+          mobilePanel.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', function () {
+              mobilePanel.classList.remove('open');
+              hamburger.classList.remove('active');
+              hamburger.setAttribute('aria-expanded', 'false');
+            });
+          });
+
+          // Escape key closes menu
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && mobilePanel.classList.contains('open')) {
+              mobilePanel.classList.remove('open');
+              hamburger.classList.remove('active');
+              hamburger.setAttribute('aria-expanded', 'false');
+              hamburger.focus();
+            }
+          });
+        }
+      }
+
+      // ══════════════════════════════════════════════════
+      // initCounters — easeOutQuart, 1500ms
+      // ══════════════════════════════════════════════════
+      function initCounters() {
+        var section = document.getElementById('social-proof');
+        if (!section) return;
+
+        var counters = section.querySelectorAll('.proof-number');
+        var hasCounted = false;
+
+        function easeOutQuart(t) {
+          return 1 - Math.pow(1 - t, 4);
+        }
+
+        function animateCounter(el) {
+          var target = parseFloat(el.dataset.target);
+          var prefix = el.dataset.prefix || '';
+          var suffix = el.dataset.suffix || '';
+          var decimals = parseInt(el.dataset.decimals || el.dataset.decimal || '0', 10);
+
+          // Reduced motion check
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            el.textContent = prefix + (decimals > 0 ? target.toFixed(decimals) : Math.round(target)) + suffix;
+            return;
+          }
+
+          var duration = 1500;
+          var start = performance.now();
+
+          function tick(now) {
+            var elapsed = now - start;
+            var progress = Math.min(elapsed / duration, 1);
+            var ease = easeOutQuart(progress);
+            var current = ease * target;
+
+            el.textContent = prefix + (decimals > 0 ? current.toFixed(decimals) : Math.round(current)) + suffix;
+
+            if (progress < 1) requestAnimationFrame(tick);
+          }
+
+          requestAnimationFrame(tick);
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting && !hasCounted) {
+              hasCounted = true;
+              counters.forEach(animateCounter);
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.3 });
+
+        observer.observe(section);
+      }
+
+      // ══════════════════════════════════════════════════
+      // initTabs — Industry tab navigation
+      // ══════════════════════════════════════════════════
+      function initTabs() {
+        var tabs = document.querySelectorAll('.ind-tab');
+        var panels = document.querySelectorAll('.ind-panel');
+        if (!tabs.length) return;
+
+        function switchTab(newTab) {
+          var targetPanel = document.getElementById(newTab.getAttribute('aria-controls'));
+
+          tabs.forEach(function (t) {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+            t.setAttribute('tabindex', '-1');
+          });
+          panels.forEach(function (p) {
+            p.classList.remove('active');
+            p.setAttribute('hidden', '');
+          });
+
+          newTab.classList.add('active');
+          newTab.setAttribute('aria-selected', 'true');
+          newTab.setAttribute('tabindex', '0');
+          newTab.focus();
+
+          if (targetPanel) {
+            targetPanel.classList.add('active');
+            targetPanel.removeAttribute('hidden');
+          }
+        }
+
+        // Click
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () { switchTab(tab); });
+        });
+
+        // Keyboard: Arrow, Home, End
+        var tabList = document.querySelector('.ind-tabs');
+        if (tabList) {
+          tabList.addEventListener('keydown', function (e) {
+            var arr = Array.from(tabs);
+            var idx = arr.indexOf(document.activeElement);
+            var next;
+
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+              e.preventDefault();
+              next = (idx + 1) % arr.length;
+              switchTab(arr[next]);
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+              e.preventDefault();
+              next = (idx - 1 + arr.length) % arr.length;
+              switchTab(arr[next]);
+            } else if (e.key === 'Home') {
+              e.preventDefault(); switchTab(arr[0]);
+            } else if (e.key === 'End') {
+              e.preventDefault(); switchTab(arr[arr.length - 1]);
+            }
+          });
+        }
+      }
+
+
+      // ══════════════════════════════════════════════════
+      // initROICalculator — live calculation + count-up
+      // ══════════════════════════════════════════════════
+      function initROICalculator() {
+        var sTeam = document.getElementById('sliderTeam');
+        var sHours = document.getElementById('sliderHours');
+        var sRate = document.getElementById('sliderRate');
+        var sErrors = document.getElementById('sliderErrors');
+        if (!sTeam || !sHours || !sRate || !sErrors) return;
+
+        var vTeam = document.getElementById('valTeam');
+        var vHours = document.getElementById('valHours');
+        var vRate = document.getElementById('valRate');
+        var vErrors = document.getElementById('valErrors');
+        var bigEl = document.getElementById('roiBigNumber');
+        var rHours = document.getElementById('roiHours');
+        var rLabor = document.getElementById('roiLabor');
+        var rErr = document.getElementById('roiErrors');
+
+        var prevTotal = 0;
+        var countRaf = null;
+        var rateMode = 'hourly'; // 'hourly' or 'daily'
+
+        // Indian number formatting
+        function formatINR(num) {
+          var n = Math.round(num);
+          var s = n.toString();
+          if (s.length <= 3) return '\u20B9' + s;
+          var last3 = s.slice(-3);
+          var rest = s.slice(0, -3);
+          return '\u20B9' + rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',') + ',' + last3;
+        }
+
+        function updateSliderFill(slider) {
+          var min = parseFloat(slider.min);
+          var max = parseFloat(slider.max);
+          var val = parseFloat(slider.value);
+          var pct = ((val - min) / (max - min)) * 100;
+          slider.style.background = 'linear-gradient(to right, #A855F7 0%, #A855F7 ' + pct + '%, #1A1A2E ' + pct + '%, #1A1A2E 100%)';
+        }
+
+        // 150ms count-up animation for the big number
+        function animateBigNumber(from, to) {
+          if (countRaf) cancelAnimationFrame(countRaf);
+          var start = performance.now();
+          var dur = 150;
+
+          function tick(now) {
+            var t = Math.min((now - start) / dur, 1);
+            var current = from + (to - from) * t;
+            bigEl.textContent = formatINR(current);
+            if (t < 1) { countRaf = requestAnimationFrame(tick); }
+          }
+
+          countRaf = requestAnimationFrame(tick);
+        }
+
+        function calculate() {
+          var teamSize = parseFloat(sTeam.value);
+          var hoursDay = parseFloat(sHours.value);
+          var rateValue = parseFloat(sRate.value);
+          var hourlyRate = rateMode === 'daily' ? rateValue / 8 : rateValue;
+          var errorsWeek = parseFloat(sErrors.value);
+
+          var workingDays = 22;
+          var automationRate = 0.80;
+          var errorCostPer = 2000;
+
+          var laborHoursSaved = teamSize * hoursDay * automationRate * workingDays;
+          var laborCostRecovered = laborHoursSaved * hourlyRate;
+          var errorCostEliminated = errorsWeek * 4.33 * errorCostPer;
+          var totalMonthly = laborCostRecovered + errorCostEliminated;
+
+          // Update labels
+          vTeam.textContent = teamSize;
+          vHours.textContent = hoursDay;
+          vRate.textContent = '\u20B9' + rateValue;
+          vErrors.textContent = errorsWeek;
+
+          // Animate big number
+          animateBigNumber(prevTotal, totalMonthly);
+          prevTotal = totalMonthly;
+
+          // Update breakdown
+          rHours.textContent = Math.round(laborHoursSaved) + 'h';
+          rLabor.textContent = formatINR(laborCostRecovered);
+          rErr.textContent = formatINR(errorCostEliminated);
+
+          // Slider fills
+          [sTeam, sHours, sRate, sErrors].forEach(updateSliderFill);
+        }
+
+        // Toggle hourly / daily
+        var btnHourly = document.getElementById('btnHourly');
+        var btnDaily = document.getElementById('btnDaily');
+        var rateModeLabel = document.getElementById('rateModeLabel');
+        var rateUnitLabel = document.getElementById('rateUnitLabel');
+
+        function setRateMode(mode) {
+          rateMode = mode;
+          if (mode === 'daily') {
+            btnDaily.classList.add('active');
+            btnHourly.classList.remove('active');
+            rateModeLabel.textContent = 'daily';
+            rateUnitLabel.textContent = 'day';
+            sRate.min = 500; sRate.max = 20000; sRate.step = 500; sRate.value = 2000;
+          } else {
+            btnHourly.classList.add('active');
+            btnDaily.classList.remove('active');
+            rateModeLabel.textContent = 'hourly';
+            rateUnitLabel.textContent = 'hr';
+            sRate.min = 200; sRate.max = 5000; sRate.step = 100; sRate.value = 800;
+          }
+          calculate();
+        }
+
+        if (btnHourly) btnHourly.addEventListener('click', function () { setRateMode('hourly'); });
+        if (btnDaily) btnDaily.addEventListener('click', function () { setRateMode('daily'); });
+
+        [sTeam, sHours, sRate, sErrors].forEach(function (s) {
+          s.addEventListener('input', calculate);
+        });
+
+        calculate();
+      }
+
+      // ══════════════════════════════════════════════════
+      // initForm — Contact form validation
+      // ══════════════════════════════════════════════════
+      function initForm() {
+        var form = document.getElementById('contactForm');
+        if (!form) return;
+
+        var fields = {
+          name: { input: document.getElementById('formName'), error: document.getElementById('errName'), msg: 'Please enter your name.' },
+          biz: { input: document.getElementById('formBiz'), error: document.getElementById('errBiz'), msg: 'Please enter your business name.' },
+          email: { input: document.getElementById('formEmail'), error: document.getElementById('errEmail'), msg: 'Please enter a valid work email.' },
+          industry: { input: document.getElementById('formIndustry'), error: document.getElementById('errIndustry'), msg: 'Please select your industry.' },
+          message: { input: document.getElementById('formMsg'), error: document.getElementById('errMsg'), msg: 'Please enter a message.' }
+        };
+
+        var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        function clearErrors() {
+          Object.keys(fields).forEach(function (k) {
+            fields[k].error.textContent = '';
+            fields[k].input.classList.remove('has-error');
+          });
+        }
+
+        function validate() {
+          var ok = true;
+          clearErrors();
+
+          if (!fields.name.input.value.trim()) { fields.name.error.textContent = fields.name.msg; fields.name.input.classList.add('has-error'); ok = false; }
+          if (!fields.biz.input.value.trim()) { fields.biz.error.textContent = fields.biz.msg; fields.biz.input.classList.add('has-error'); ok = false; }
+          if (!fields.email.input.value.trim() || !emailRe.test(fields.email.input.value.trim())) { fields.email.error.textContent = fields.email.msg; fields.email.input.classList.add('has-error'); ok = false; }
+          if (!fields.industry.input.value) { fields.industry.error.textContent = fields.industry.msg; fields.industry.input.classList.add('has-error'); ok = false; }
+          if (!fields.message.input.value.trim()) { fields.message.error.textContent = fields.message.msg; fields.message.input.classList.add('has-error'); ok = false; }
+
+          return ok;
+        }
+
+        // Clear error on input
+        Object.keys(fields).forEach(function (k) {
+          fields[k].input.addEventListener('input', function () {
+            fields[k].error.textContent = '';
+            fields[k].input.classList.remove('has-error');
+          });
+        });
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (!validate()) return;
+          var btn = document.getElementById('bookSubmitBtn');
+          btn.classList.add('loading');
+          btn.disabled = true;
+          const formData = new FormData(form);
+
+          // Dynamically set auto-response message with proper grammar
+          const userName = fields.name.input.value.trim().split(' ')[0];
+          const autoMsg = `Hi ${userName},\n\nThank you for reaching out to Rynex Agency. We have successfully received your form request regarding your automation needs. Our team is already reviewing your details, and one of our specialists will get back to you within the next 4 hours to discuss the next steps.\n\nBest regards,\nThe Rynex AI Team`;
+          document.getElementById('autorespondField').value = autoMsg;
+          formData.set('autorespond', autoMsg); // Ensure it's in the payload
+          formData.set('replyto', fields.email.input.value.trim()); // Set reply-to to client email
+
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+          })
+            .then(async (response) => {
+              if (response.status == 200) {
+                form.style.display = 'none';
+                var success = document.getElementById('bookSuccess');
+                var firstName = fields.name.input.value.trim().split(' ')[0];
+                document.getElementById('bookSuccessMsg').textContent = 'Thank you, ' + firstName + '. Our team will get back to you within 4 hours.';
+                success.removeAttribute('hidden');
+                success.classList.add('show');
+              } else {
+                alert('Submission failed. Please check your Access Key.');
+                btn.classList.remove('loading');
+                btn.disabled = false;
+              }
+            })
+            .catch(error => {
+              alert('Error submitting form. Please check your connection.');
+              btn.classList.remove('loading');
+              btn.disabled = false;
+            });
+        });
+      }
+
+      // ══════════════════════════════════════════════════
+      // initFooterYear
+      // ══════════════════════════════════════════════════
+      function initFooterYear() {
+        var el = document.getElementById('footer-year');
+        if (el) el.textContent = new Date().getFullYear();
+      }
+
+      function initBackToTop() {
+        var btn = document.getElementById('btt');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // ══════════════════════════════════════════════════
+      // HERO ANIMATION — Cursor-Reactive Fluid Physics
+      // ══════════════════════════════════════════════════
+      function initHeroAnimation() {
+        var container = document.getElementById('animContainer');
+        if (!container) return;
+
+        var canvas = document.getElementById('animCanvas');
+        if (!canvas) return;
+        var ctx = canvas.getContext('2d');
+
+        // Bail for reduced motion
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        // ─── Icon definitions ─────────────────────────
+        var iconIds = [
+          'fi-meta', 'fi-elevenlabs', 'fi-whatsapp', 'fi-gmail',
+          'fi-gcal', 'fi-ghl', 'fi-stripe', 'fi-twilio'
+        ];
+        var iconColors = [
+          '#1877F2', '#555', '#25D366', '#EA4335',
+          '#4285F4', '#F26522', '#635BFF', '#F22F46'
+        ];
+
+        // Workflow pipeline order for showcase mode
+        var pipelineOrder = [0, 1, 2, 3, 5, 4, 6, 7]; // Meta→ElevenLabs→WhatsApp→Follow-Up→CRM→Booking→Stripe→SMS
+
+        var iconEls = iconIds.map(function (id) { return document.getElementById(id); });
+        var ICON_SIZE = 52;
+        var NUM = iconEls.length;
+
+        // ─── Physics state ────────────────────────────
+        var particles = [];
+        var mouse = { x: 0, y: 0, active: false };
+        var containerW = 0, containerH = 0;
+        var centerX = 0, centerY = 0;
+        var ORBIT_RADIUS = 190;
+        var time = 0;
+        var animState = 'idle'; // idle | interacting | showcase
+        var hoverTimer = null;
+        var showcaseTimer = null;
+
+        // Spring/physics constants
+        var SPRING_K = 0.02;       // spring stiffness
+        var DAMPING = 0.88;        // velocity damping
+        var CURSOR_FORCE = 2800;   // cursor repulsion strength
+        var CURSOR_RADIUS = 200;   // cursor effect radius
+        var COLLISION_RADIUS = 65; // min distance between icons (bigger = more space)
+        var COLLISION_FORCE = 0.5;
+        var ORBIT_SPEED = 0.0003;  // base orbit rotation speed
+        var FLOAT_AMP = 8;        // float amplitude
+        var FLOAT_SPEED = 0.002;  // float frequency
+
+        function initParticles() {
+          particles = [];
+          for (var i = 0; i < NUM; i++) {
+            var angle = (i / NUM) * Math.PI * 2;
+            var tx = centerX + Math.cos(angle) * ORBIT_RADIUS;
+            var ty = centerY + Math.sin(angle) * ORBIT_RADIUS;
+            particles.push({
+              x: tx,
+              y: ty,
+              vx: 0,
+              vy: 0,
+              targetX: tx,
+              targetY: ty,
+              baseAngle: angle,
+              el: iconEls[i]
+            });
+          }
+        }
+
+        // ─── Resize handler ───────────────────────────
+        function resize() {
+          var rect = container.getBoundingClientRect();
+          containerW = rect.width;
+          containerH = rect.height;
+          centerX = containerW / 2;
+          centerY = containerH / 2;
+          canvas.width = containerW * window.devicePixelRatio;
+          canvas.height = containerH * window.devicePixelRatio;
+          canvas.style.width = containerW + 'px';
+          canvas.style.height = containerH + 'px';
+          ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
+
+          // Update ICON_SIZE and ORBIT_RADIUS for mobile
+          var isMobile = window.innerWidth <= 768;
+          ICON_SIZE = isMobile ? 42 : 52;
+          ORBIT_RADIUS = isMobile ? Math.min(containerW, containerH) * 0.34 : Math.min(containerW, containerH) * 0.36;
+          COLLISION_RADIUS = ICON_SIZE + 10;
+
+          // Replace hub text for mobile
+          var hubSub = document.querySelector('.hub-sub');
+          if (hubSub) {
+            hubSub.textContent = isMobile ? 'Workflow Engine' : 'Automation Engine';
+          }
+
+          // Update target positions
+          for (var i = 0; i < particles.length; i++) {
+            var angle = particles[i].baseAngle;
+            particles[i].targetX = centerX + Math.cos(angle) * ORBIT_RADIUS;
+            particles[i].targetY = centerY + Math.sin(angle) * ORBIT_RADIUS;
+          }
+        }
+
+        // ─── Mouse tracking ───────────────────────────
+        container.addEventListener('mousemove', function (e) {
+          var rect = container.getBoundingClientRect();
+          mouse.x = e.clientX - rect.left;
+          mouse.y = e.clientY - rect.top;
+          mouse.active = true;
+
+          if (animState === 'idle') {
+            animState = 'interacting';
+          }
+
+          // Reset hover timer for showcase mode
+          clearTimeout(hoverTimer);
+          if (animState !== 'showcase') {
+            hoverTimer = setTimeout(function () {
+              if (mouse.active) enterShowcase();
+            }, 2000);
+          }
+        });
+
+        container.addEventListener('mouseleave', function () {
+          mouse.active = false;
+          clearTimeout(hoverTimer);
+          if (animState === 'interacting') {
+            animState = 'idle';
+          }
+          if (animState === 'showcase') {
+            exitShowcase();
+          }
+        });
+
+        // ─── Click → Workflow Run Animation (one-shot) ─
+        var runInProgress = false;
+        container.addEventListener('click', function (e) {
+          if (runInProgress) return;
+          runInProgress = true;
+
+          var pipeStatus = document.getElementById('pipelineStatus');
+          var rings = [document.getElementById('ring1'), document.getElementById('ring2'), document.getElementById('ring3')];
+
+          // Clear any previous state
+          iconEls.forEach(function (el) {
+            if (el) el.classList.remove('glow', 'completed');
+          });
+          rings.forEach(function (r) { if (r) r.classList.remove('active'); });
+          if (pipeStatus) pipeStatus.classList.remove('visible');
+
+          // Step 1: Facebook (trigger node) pulses + checkmark
+          setTimeout(function () {
+            if (iconEls[0]) { iconEls[0].classList.add('glow'); iconEls[0].classList.add('completed'); }
+          }, 100);
+
+          // Step 2: Hub pulses with rings
+          setTimeout(function () {
+            rings.forEach(function (r) { if (r) r.classList.add('active'); });
+          }, 600);
+
+          // Step 3: Fan out to ALL other nodes with stagger
+          var fanOut = [
+            { idx: 1, delay: 1000 },  // ElevenLabs Voice Bot
+            { idx: 5, delay: 1400 },  // GoHighLevel
+            { idx: 3, delay: 1800 },  // Gmail
+            { idx: 4, delay: 2200 },  // Cal.com
+            { idx: 2, delay: 2600 },  // WhatsApp
+            { idx: 7, delay: 3000 },  // Twilio
+            { idx: 6, delay: 3400 },  // Stripe
+          ];
+
+          fanOut.forEach(function (item) {
+            setTimeout(function () {
+              if (iconEls[item.idx]) {
+                iconEls[item.idx].classList.add('glow');
+                iconEls[item.idx].classList.add('completed');
+              }
+            }, item.delay);
+          });
+
+          // Step 4: Show "Lead Captured" after all nodes complete
+          setTimeout(function () {
+            if (pipeStatus) pipeStatus.classList.add('visible');
+          }, 3800);
+
+          // Step 5: Clean up after 3.5s display — no re-loop
+          setTimeout(function () {
+            iconEls.forEach(function (el) {
+              if (el) el.classList.remove('glow', 'completed');
+            });
+            rings.forEach(function (r) { if (r) r.classList.remove('active'); });
+            if (pipeStatus) pipeStatus.classList.remove('visible');
+            runInProgress = false;
+          }, 7500);
+        });
+
+        // ─── Showcase mode ────────────────────────────
+        function enterShowcase() {
+          animState = 'showcase';
+          container.classList.add('showcase-mode');
+
+          // Arrange icons in two rows around center — wide gap from hub
+          var row1 = [pipelineOrder[0], pipelineOrder[1], pipelineOrder[2], pipelineOrder[3]];
+          var row2 = [pipelineOrder[4], pipelineOrder[5], pipelineOrder[6], pipelineOrder[7]];
+          var xSpacing = containerW / 5;
+          var isMobile = window.innerWidth <= 768;
+          var topY = centerY - (isMobile ? 100 : 130);
+          var botY = centerY + (isMobile ? 100 : 130);
+
+          row1.forEach(function (idx, i) {
+            particles[idx].targetX = xSpacing * (i + 1);
+            particles[idx].targetY = topY;
+          });
+          row2.forEach(function (idx, i) {
+            particles[idx].targetX = xSpacing * (i + 1);
+            particles[idx].targetY = botY;
+          });
+
+          // Auto-exit after 5s
+          clearTimeout(showcaseTimer);
+          showcaseTimer = setTimeout(function () {
+            if (animState === 'showcase') exitShowcase();
+          }, 5000);
+        }
+
+        function exitShowcase() {
+          animState = mouse.active ? 'interacting' : 'idle';
+          container.classList.remove('showcase-mode');
+          clearTimeout(showcaseTimer);
+
+          // Restore orbital targets
+          for (var i = 0; i < particles.length; i++) {
+            var angle = particles[i].baseAngle;
+            particles[i].targetX = centerX + Math.cos(angle) * ORBIT_RADIUS;
+            particles[i].targetY = centerY + Math.sin(angle) * ORBIT_RADIUS;
+          }
+        }
+
+        // ─── Physics update ───────────────────────────
+        function updatePhysics() {
+          time++;
+          var dt = 1;
+
+          for (var i = 0; i < particles.length; i++) {
+            var p = particles[i];
+
+            // Orbit drift (idle only)
+            if (animState === 'idle') {
+              p.baseAngle += ORBIT_SPEED;
+              p.targetX = centerX + Math.cos(p.baseAngle) * ORBIT_RADIUS;
+              p.targetY = centerY + Math.sin(p.baseAngle) * ORBIT_RADIUS;
+
+              // Add gentle float
+              p.targetX += Math.sin(time * FLOAT_SPEED + i * 1.3) * FLOAT_AMP;
+              p.targetY += Math.cos(time * FLOAT_SPEED * 0.7 + i * 0.9) * FLOAT_AMP;
+            }
+
+            // Spring to target
+            var dx = p.targetX - p.x;
+            var dy = p.targetY - p.y;
+            var springForceX = dx * SPRING_K;
+            var springForceY = dy * SPRING_K;
+
+            p.vx += springForceX;
+            p.vy += springForceY;
+
+            // Cursor repulsion
+            if (mouse.active && animState !== 'showcase') {
+              var mdx = p.x - mouse.x;
+              var mdy = p.y - mouse.y;
+              var mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+              if (mDist < CURSOR_RADIUS && mDist > 1) {
+                var force = CURSOR_FORCE / (mDist * mDist);
+                p.vx += (mdx / mDist) * force;
+                p.vy += (mdy / mDist) * force;
+              }
+            }
+
+            // Collision avoidance
+            for (var j = i + 1; j < particles.length; j++) {
+              var q = particles[j];
+              var cdx = p.x - q.x;
+              var cdy = p.y - q.y;
+              var cDist = Math.sqrt(cdx * cdx + cdy * cdy);
+              if (cDist < COLLISION_RADIUS && cDist > 1) {
+                var overlap = (COLLISION_RADIUS - cDist) * COLLISION_FORCE;
+                var nx = cdx / cDist;
+                var ny = cdy / cDist;
+                p.vx += nx * overlap;
+                p.vy += ny * overlap;
+                q.vx -= nx * overlap;
+                q.vy -= ny * overlap;
+              }
+            }
+
+            // Damping
+            p.vx *= DAMPING;
+            p.vy *= DAMPING;
+
+            // Integrate
+            p.x += p.vx * dt;
+            p.y += p.vy * dt;
+
+            // Clamp to container
+            p.x = Math.max(ICON_SIZE / 2, Math.min(containerW - ICON_SIZE / 2, p.x));
+            p.y = Math.max(ICON_SIZE / 2, Math.min(containerH - ICON_SIZE / 2, p.y));
+
+            // Update DOM — use transform for GPU acceleration
+            if (p.el) {
+              p.el.style.transform = 'translate(' + (p.x - ICON_SIZE / 2) + 'px,' + (p.y - ICON_SIZE / 2) + 'px)';
+            }
+          }
+        }
+
+        // ─── Canvas drawing ───────────────────────────
+        function drawConnections() {
+          ctx.clearRect(0, 0, containerW, containerH);
+
+          // Connection lines from each icon to center hub
+          for (var i = 0; i < particles.length; i++) {
+            var p = particles[i];
+            var color = iconColors[i];
+
+            // Bezier connection line
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            var cpx = (p.x + centerX) / 2 + Math.sin(time * 0.01 + i) * 20;
+            var cpy = (p.y + centerY) / 2 + Math.cos(time * 0.01 + i) * 20;
+            ctx.quadraticCurveTo(cpx, cpy, centerX, centerY);
+            ctx.strokeStyle = color;
+            ctx.globalAlpha = 0.12;
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+          }
+
+          // Flowing dots along connection lines
+          for (var i = 0; i < particles.length; i++) {
+            var p = particles[i];
+            var color = iconColors[i];
+
+            // Multiple dots per line with different phases
+            for (var d = 0; d < 3; d++) {
+              var t = ((time * 0.008 + i * 0.3 + d * 0.33) % 1);
+              var cpx = (p.x + centerX) / 2 + Math.sin(time * 0.01 + i) * 20;
+              var cpy = (p.y + centerY) / 2 + Math.cos(time * 0.01 + i) * 20;
+
+              // Quadratic bezier point
+              var mt = 1 - t;
+              var dotX = mt * mt * p.x + 2 * mt * t * cpx + t * t * centerX;
+              var dotY = mt * mt * p.y + 2 * mt * t * cpy + t * t * centerY;
+
+              ctx.beginPath();
+              ctx.arc(dotX, dotY, 2.5 - d * 0.5, 0, Math.PI * 2);
+              ctx.fillStyle = color;
+              ctx.globalAlpha = 0.7 - d * 0.2;
+              ctx.fill();
+
+              // Glow
+              ctx.beginPath();
+              ctx.arc(dotX, dotY, 5 - d, 0, Math.PI * 2);
+              ctx.fillStyle = color;
+              ctx.globalAlpha = 0.15;
+              ctx.fill();
+              ctx.globalAlpha = 1;
+            }
+          }
+
+          // Showcase mode: draw pipeline flow line
+          if (animState === 'showcase') {
+            ctx.beginPath();
+            var first = particles[pipelineOrder[0]];
+            ctx.moveTo(first.x, first.y);
+            for (var i = 1; i < NUM; i++) {
+              var pi = particles[pipelineOrder[i]];
+              ctx.lineTo(pi.x, pi.y);
+            }
+            ctx.strokeStyle = '#10B981';
+            ctx.globalAlpha = 0.4;
+            ctx.lineWidth = 2;
+            ctx.setLineDash([6, 4]);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.globalAlpha = 1;
+
+            // Large flowing dot along pipeline
+            var pipeT = (time * 0.005) % 1;
+            var segIdx = Math.floor(pipeT * (NUM - 1));
+            var segT = (pipeT * (NUM - 1)) - segIdx;
+            if (segIdx < NUM - 1) {
+              var pa = particles[pipelineOrder[segIdx]];
+              var pb = particles[pipelineOrder[segIdx + 1]];
+              var px = pa.x + (pb.x - pa.x) * segT;
+              var py = pa.y + (pb.y - pa.y) * segT;
+
+              ctx.beginPath();
+              ctx.arc(px, py, 5, 0, Math.PI * 2);
+              ctx.fillStyle = '#10B981';
+              ctx.globalAlpha = 0.9;
+              ctx.fill();
+              ctx.beginPath();
+              ctx.arc(px, py, 10, 0, Math.PI * 2);
+              ctx.fillStyle = '#10B981';
+              ctx.globalAlpha = 0.2;
+              ctx.fill();
+              ctx.globalAlpha = 1;
+            }
+          }
+        }
+
+        // ─── Animation loop ───────────────────────────
+        var rafId;
+        function animate() {
+          updatePhysics();
+          drawConnections();
+          rafId = requestAnimationFrame(animate);
+        }
+
+        // ─── Init ─────────────────────────────────────
+        resize();
+        initParticles();
+        animate();
+
+        window.addEventListener('resize', function () {
+          resize();
+        });
+
+        // Cleanup on page leave
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) {
+            cancelAnimationFrame(rafId);
+          } else {
+            rafId = requestAnimationFrame(animate);
+          }
+        });
+      }
+
+      // ══════════════════════════════════════════════════
+      // AUDIO PLAYER
+      // ══════════════════════════════════════════════════
+      function initAudioPlayer() {
+        const audio = document.getElementById('csAudio');
+        const playBtn = document.getElementById('csAudioPlayBtn');
+        const iconPlay = document.getElementById('csAudioIconPlay');
+        const iconPause = document.getElementById('csAudioIconPause');
+        const currentLabel = document.getElementById('csAudioCurrent');
+        const totalLabel = document.getElementById('csAudioTotal');
+        const fill = document.getElementById('csAudioFill');
+        const trackContainer = document.getElementById('csAudioTrackContainer');
+
+        if (!audio || !playBtn) return;
+
+        const formatTime = (time) => {
+          if (isNaN(time)) return "0:00";
+          const m = Math.floor(time / 60);
+          const s = Math.floor(time % 60);
+          return `${m}:${s.toString().padStart(2, '0')}`;
+        };
+
+        audio.addEventListener('loadedmetadata', () => {
+          totalLabel.textContent = formatTime(audio.duration);
+        });
+
+        audio.addEventListener('timeupdate', () => {
+          currentLabel.textContent = formatTime(audio.currentTime);
+          const pct = (audio.currentTime / audio.duration) * 100;
+          fill.style.width = `${pct}%`;
+        });
+
+        audio.addEventListener('ended', () => {
+          iconPlay.style.display = 'block';
+          iconPause.style.display = 'none';
+          fill.style.width = '0%';
+          audio.currentTime = 0;
+        });
+
+        playBtn.addEventListener('click', () => {
+          if (audio.paused) {
+            audio.play();
+            iconPlay.style.display = 'none';
+            iconPause.style.display = 'block';
+          } else {
+            audio.pause();
+            iconPlay.style.display = 'block';
+            iconPause.style.display = 'none';
+          }
+        });
+
+        trackContainer.addEventListener('click', (e) => {
+          const rect = trackContainer.getBoundingClientRect();
+          const pos = (e.clientX - rect.left) / rect.width;
+          audio.currentTime = pos * audio.duration;
+        });
+      }
+
+      // ══════════════════════════════════════════════════
+      // CUSTOM CURSOR
+      // ══════════════════════════════════════════════════
+      function initCustomCursor() {
+        const cursorDot = document.getElementById('cursorDot');
+        if (!cursorDot) return;
+
+        // Hide on touch devices
+        if (window.matchMedia("(pointer: coarse)").matches) {
+          cursorDot.style.display = 'none';
+          return;
+        }
+
+        document.body.style.cursor = 'none';
+
+        window.addEventListener('mousemove', function (e) {
+          // Instant positioning for full speed
+          cursorDot.style.left = e.clientX + 'px';
+          cursorDot.style.top = e.clientY + 'px';
+        });
+
+        // Hover effects
+        const interactiveElements = document.querySelectorAll('a, button, .cs-card, .team-card, .ind-tab');
+        interactiveElements.forEach(el => {
+          el.addEventListener('mouseenter', () => cursorDot.classList.add('hovering'));
+          el.addEventListener('mouseleave', () => cursorDot.classList.remove('hovering'));
+        });
+      }
+
+      function initScreenshotLightbox() {
+        const modal = document.getElementById('screenshotModal');
+        const modalImg = document.getElementById('modalImg');
+        const captionText = document.getElementById('modalCaption');
+        const closeBtn = document.getElementById('modalClose');
+        const screenshots = document.querySelectorAll('.clickable-screenshot');
+
+        if (!modal || !modalImg || !closeBtn) return;
+
+        screenshots.forEach(img => {
+          img.style.cursor = 'zoom-in';
+          img.addEventListener('click', function () {
+            modal.classList.add('active');
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+          });
+        });
+
+        const closeModal = () => {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        };
+
+        closeBtn.onclick = closeModal;
+        modal.onclick = (e) => {
+          if (e.target === modal) closeModal();
+        };
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+          }
+        });
+      }
+
+      // ══════════════════════════════════════════════════
+      // SCROLL REVEAL ANIMATIONS
+      // ══════════════════════════════════════════════════
+      function initReveal() {
+        const revealElements = document.querySelectorAll('.reveal, .fade-in, .anim-fade-up');
+
+        const revealCallback = (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              // Optional: stop observing once revealed
+              // observer.unobserve(entry.target);
+            }
+          });
+        };
+
+        const revealOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+
+        revealElements.forEach(el => revealObserver.observe(el));
+      }
+
+      // ══════════════════════════════════════════════════
+      // TYPEWRITER ANIMATION FOR ALL HEADINGS
+      // ══════════════════════════════════════════════════
+      function initTypewriters() {
+        const typewriters = document.querySelectorAll('.anim-typewriter');
+        if (!typewriters.length) return;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('typing-started')) {
+              entry.target.classList.add('typing-started');
+              typeHTML(entry.target);
+            }
+          });
+        }, { threshold: 0.2, rootMargin: "0px 0px -50px 0px" });
+
+        typewriters.forEach(el => {
+          // Store original HTML and clear it
+          el.dataset.originalHtml = el.innerHTML.trim();
+          el.innerHTML = '';
+          observer.observe(el);
+        });
+
+        function typeHTML(el) {
+          const html = el.dataset.originalHtml;
+          let i = 0;
+          let currentHTML = '';
+          const timer = setInterval(() => {
+            if (i >= html.length) {
+              clearInterval(timer);
+              el.classList.add('typing-done');
+              return;
+            }
+            if (html[i] === '<') {
+              let tag = '';
+              while (html[i] !== '>' && i < html.length) {
+                tag += html[i];
+                i++;
+              }
+              tag += '>';
+              currentHTML += tag;
+              i++; // Skip the actual '>' character so it isn't printed twice
+            } else {
+              currentHTML += html[i];
+              i++;
+            }
+            el.innerHTML = currentHTML;
+          }, 40); // Fast typing speed for headings
+        }
+      }
+
+      // ══════════════════════════════════════════════════
+      // BOOT
+      // ══════════════════════════════════════════════════
+      document.addEventListener('DOMContentLoaded', function () {
+        initCustomCursor();
+        initReveal();
+        initTypewriters();
+        initNav();
+        initHeroAnimation();
+        initCounters();
+        initAudioPlayer();
+        initROICalculator();
+        initTabs();
+        initForm();
+        initFooterYear();
+        initBackToTop();
+        initScreenshotLightbox();
+        initBookingTabs();
+        initGalleryNav();
+        initCallLogSlider();
+      });
+
+      function initCallLogSlider() {
+        const slider = document.querySelector('.call-log-slider');
+        if (!slider) return;
+
+        const track = slider.querySelector('.call-log-track');
+        const slides = slider.querySelectorAll('.call-log-slide');
+        const dots = slider.querySelectorAll('.call-log-dots .dot');
+
+        const TOTAL = slides.length;        // originals + clones (e.g. 4)
+        const ORIG_COUNT = TOTAL / 2;            // original slides only (e.g. 2)
+        const DURATION = 500;                  // ms — must match CSS transition
+        const AUTOPLAY_DELAY = 3000;                // ms between auto-advances
+
+        let currentIndex = 0;
+        let isTransitioning = false;
+        let isPaused = false;
+        let autoTimer;
+
+        // ── Core positioning ─────────────────────────────────────
+
+        function setPosition(index, animate) {
+          track.style.transition = animate
+            ? 'transform ' + DURATION + 'ms ease'
+            : 'none';
+          track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        }
+
+        function updateDots(index) {
+          var active = index % ORIG_COUNT;
+          dots.forEach(function (d, i) {
+            d.classList.toggle('active', i === active);
+          });
+        }
+
+        // ── Go to a specific slide (public entry point) ───────────
+
+        function goToSlide(index) {
+          if (isTransitioning) return;
+
+          // Wrap index into valid bounds
+          if (index < 0) index = ORIG_COUNT - 1;
+          if (index >= TOTAL) index = 0;
+
+          currentIndex = index;
+          isTransitioning = true;
+          setPosition(currentIndex, true);
+          updateDots(currentIndex);
+        }
+
+        // ── Seamless clone-loop reset ─────────────────────────────
+        // Guard on e.propertyName so this fires exactly once per
+        // slide change, regardless of how many properties transition.
+
+        track.addEventListener('transitionend', function (e) {
+          if (e.propertyName !== 'transform') return;
+          isTransitioning = false;
+
+          // If we landed on a clone, instantly warp to the original
+          if (currentIndex >= ORIG_COUNT) {
+            currentIndex -= ORIG_COUNT;
+            setPosition(currentIndex, false);   // no transition — invisible jump
+            updateDots(currentIndex);
+          }
+        });
+
+        // ── Auto-play ─────────────────────────────────────────────
+
+        function startAutoPlay() {
+          clearInterval(autoTimer);
+          autoTimer = setInterval(function () {
+            if (!isPaused && !isTransitioning) {
+              goToSlide(currentIndex + 1);
+            }
+          }, AUTOPLAY_DELAY);
+        }
+
+        function stopAutoPlay() {
+          clearInterval(autoTimer);
+        }
+
+        // ── Hover pause ───────────────────────────────────────────
+
+        slider.addEventListener('mouseenter', function () {
+          isPaused = true;
+          stopAutoPlay();
+          slider.classList.add('paused');
+        });
+
+        slider.addEventListener('mouseleave', function () {
+          isPaused = false;
+          slider.classList.remove('paused');
+          startAutoPlay();
+        });
+
+        // ── Dot navigation ────────────────────────────────────────
+
+        dots.forEach(function (dot, i) {
+          dot.addEventListener('click', function () {
+            isPaused = true;
+            stopAutoPlay();
+            if (!isTransitioning) {
+              currentIndex = i;
+              isTransitioning = true;
+              setPosition(currentIndex, true);
+              updateDots(currentIndex);
+            }
+          });
+        });
+
+        // ── Touch swipe ───────────────────────────────────────────
+
+        var touchStartX = 0;
+
+        track.addEventListener('touchstart', function (e) {
+          touchStartX = e.touches[0].clientX;
+          stopAutoPlay();
+          isPaused = true;
+        }, { passive: true });
+
+        track.addEventListener('touchend', function (e) {
+          var diff = touchStartX - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 50) {
+            goToSlide(currentIndex + (diff > 0 ? 1 : -1));
+          }
+        });
+
+        // ── Mouse drag ────────────────────────────────────────────
+
+        var dragStartX = 0;
+        var isDragging = false;
+
+        track.addEventListener('mousedown', function (e) {
+          if (isTransitioning) return;
+          dragStartX = e.clientX;
+          isDragging = true;
+          stopAutoPlay();
+          isPaused = true;
+          track.style.transition = 'none';
+        });
+
+        window.addEventListener('mousemove', function (e) {
+          if (!isDragging) return;
+          var diff = dragStartX - e.clientX;
+          track.style.transform = 'translateX(calc(-' + (currentIndex * 100)
+            + '% - ' + diff + 'px))';
+        });
+
+        window.addEventListener('mouseup', function (e) {
+          if (!isDragging) return;
+          isDragging = false;
+          var diff = dragStartX - e.clientX;
+          if (Math.abs(diff) > 50) {
+            goToSlide(currentIndex + (diff > 0 ? 1 : -1));
+          } else {
+            setPosition(currentIndex, true);    // snap back to current slide
+            isTransitioning = true;
+          }
+        });
+
+        // ── Init ──────────────────────────────────────────────────
+
+        setPosition(0, false);
+        updateDots(0);
+        startAutoPlay();
+      }
+
+      function initBookingTabs() {
+        const btns = document.querySelectorAll('.book-tab-btn');
+        const contents = document.querySelectorAll('.book-tab-content');
+        if (!btns.length) return;
+
+        btns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-target');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            contents.forEach(c => {
+              c.classList.remove('active');
+              if (c.id === target) c.classList.add('active');
+            });
+          });
+        });
+
+        // Sub-tabs for Calendar
+        const calBtns = document.querySelectorAll('.cal-sub-btn');
+        const calIframe = document.getElementById('calEmbed');
+        if (calBtns.length && calIframe) {
+          calBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+              calBtns.forEach(b => b.classList.remove('active'));
+              btn.classList.add('active');
+              calIframe.src = btn.getAttribute('data-url');
+            });
+          });
+        }
+      }
+
+      function initGalleryNav() {
+        const marquee = document.getElementById('galleryMarquee');
+        const prevBtn = document.getElementById('galleryPrev');
+        const nextBtn = document.getElementById('galleryNext');
+        if (!marquee || !prevBtn || !nextBtn) return;
+
+        let scrollAmount = 0;
+        const cardWidth = 444; // 420 + 24 gap
+
+        nextBtn.addEventListener('click', () => {
+          marquee.style.animation = 'none';
+          scrollAmount -= cardWidth;
+          marquee.style.transform = `translateX(${scrollAmount}px)`;
+          // Resume animation after delay
+          setTimeout(() => {
+            marquee.style.animation = 'marqueeGallery 40s linear infinite';
+            // We'd need more complex logic to resume from current position, 
+            // but simple manual scroll is usually enough for these marquees.
+          }, 3000);
+        });
+
+        prevBtn.addEventListener('click', () => {
+          marquee.style.animation = 'none';
+          scrollAmount += cardWidth;
+          marquee.style.transform = `translateX(${scrollAmount}px)`;
+          setTimeout(() => {
+            marquee.style.animation = 'marqueeGallery 40s linear infinite';
+          }, 3000);
+        });
+      }
+
+    })();
+  </script>
+
+  <!-- ElevenLabs AI Voice Assistant -->
+  <elevenlabs-convai agent-id="agent_1201kq2r0qjbex5tae9y37nx65c4"></elevenlabs-convai>
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+</body>
+
+</html>
